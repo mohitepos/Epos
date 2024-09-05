@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout.xsd">
+    <referenceContainer name="content">
+            <block before="product.info.details" class="Epos\CustomProductField\Block\ProductDetails" name="extra" template="Epos_CustomProductField::product/view/cmsblock.phtml" />        
+        </referenceContainer>
+</config>

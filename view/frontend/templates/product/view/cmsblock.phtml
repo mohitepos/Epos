@@ -1,0 +1,24 @@
+<?php // $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_links_block')->toHtml(); ?>
+<?php
+// Ensure that the product object is available
+$product = $block->getProduct(); // This assumes $block is the block class from which `details.phtml` is called
+
+if ($product) {
+    // Retrieve the custom attribute value
+    $customBlockPages = $product->getData('custom_block_pages');
+    
+    // Alternatively, you can use:
+    // $customBlockPages = $product->getCustomAttribute('custom_block_pages')->getValue();
+    
+    if ($customBlockPages) {
+        // Output the custom attribute value
+        $cmsBlock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId($customBlockPages)
+            ->toHtml();
+        
+        echo $cmsBlock;
+    }
+}
+?>
+
+
